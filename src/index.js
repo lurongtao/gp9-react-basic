@@ -7,3 +7,7 @@ ReactDOM.render(
   <App title="hello" />,
   document.querySelector('#root')
 )
+
+// setTimeout(() => {
+//   ReactDOM.unmountComponentAtNode(document.querySelector('#root'))
+// }, 2000)
