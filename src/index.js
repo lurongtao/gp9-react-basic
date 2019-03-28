@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {
+  Provider
+} from 'react-redux'
 
 import App from './App'
 
+import store from './components/redux/store'
+
 ReactDOM.render(
-  <App title="hello" />,
+  <Provider store={store}>
+    <App title="hello" />
+  </Provider>,
   document.querySelector('#root')
 )
-
-// setTimeout(() => {
-//   ReactDOM.unmountComponentAtNode(document.querySelector('#root'))
-// }, 2000)

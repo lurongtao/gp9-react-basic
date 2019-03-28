@@ -1,0 +1,7 @@
+.active {
+  font-size: 40px;
+}
+
+.active::before {
+  content: '> '
+}
