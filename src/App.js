@@ -2,12 +2,12 @@ import React, {
   Component
 } from 'react'
 
-import Counter from './components/redux/views/CounterWithReactRedux'
+import Comment from './components/redux/comment/Comment'
 
 class App extends Component {
   render() {
     return (
-      <Counter></Counter>
+      <Comment></Comment>
     )
   }
 }

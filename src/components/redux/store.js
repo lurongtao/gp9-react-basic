@@ -1,24 +1,39 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+
+// redux-thunk redux-saga redux-promise
+
+import thunk from 'redux-thunk'
+
+const enhancer = applyMiddleware(thunk)
 
 const defaultState = {
-  count: 0
+  commentlist: []
 }
 
 const reducer = (state = defaultState, action) => {
   switch(action.type) {
-    case 'increment' :
+    case 'load': 
       return {
-        count: state.count + action.payload
+        commentlist: action.payload
       }
-    case 'decrement' :
+    case 'push':
       return {
-        count: state.count - action.payload
+        commentlist: [
+          ...state.commentlist,
+          action.payload
+        ]
+      }
+    case 'splice': 
+      let commentlist = [...state.commentlist]
+      commentlist.splice(action.payload, 1)
+      return {
+        commentlist
       }
     default :
       return state
   }
 }
 
-const store = createStore(reducer)
+const store = createStore(reducer, enhancer)
 
 export default store
