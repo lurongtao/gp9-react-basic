@@ -4,6 +4,8 @@ const defaultState = {
   count: 0
 }
 
+console.log(redux)
+
 const reducer = (state = defaultState, action) => {
   switch(action.type) {
     case 'increment' :
